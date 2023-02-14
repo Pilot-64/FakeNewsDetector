@@ -92,7 +92,7 @@ model.compile(loss='binary_crossentropy',
 model.summary()
 
 # model architecture
-num_epochs = 50
+num_epochs = 200
   
 training_padded = np.array(training_sequences1)
 training_labels = np.array(training_labels)
