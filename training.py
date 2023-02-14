@@ -17,7 +17,7 @@ from sklearn import preprocessing
 tf.disable_eager_execution()
   
 # Reading the data
-dataraw = pd.read_csv("news.csv")
+dataraw = pd.read_csv("data/news.csv")
 dataraw.head()
 data = dataraw.drop(["Unnamed: 0"], axis=1)
 data.head(5)
@@ -61,7 +61,7 @@ training_labels = labels[split:training_size]
 
 # generating word embeddings
 embeddings_index = {}
-with open('glove.6B.50d.txt', encoding="utf-8") as f:
+with open('data/glove.6B.50d.txt', encoding="utf-8") as f:
     for line in f:
         values = line.split()
         word = values[0]
@@ -105,4 +105,4 @@ history = model.fit(training_padded, training_labels,
                                      testing_labels), 
                     verbose=2)
 
-model.save('fakenewsmodel.h5')
+model.save('data/fakenewsmodel.h5')
