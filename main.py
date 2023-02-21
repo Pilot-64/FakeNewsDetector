@@ -11,8 +11,8 @@ app = FastAPI()
 @app.get('/predict')
 def predict(title: str):
     # load the dataset
-    model = keras.models.load_model('fakenewsmodel.h5')
-    dataraw = pd.read_csv("news.csv")
+    model = keras.models.load_model('./data/fakenewsmodel.h5')
+    dataraw = pd.read_csv("./data/news.csv")
     data = dataraw.drop(["Unnamed: 0"], axis=1)
 
     # encode the labels
